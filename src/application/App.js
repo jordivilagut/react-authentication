@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
+import {Switch, Route} from 'react-router-dom'
+import {PrivateRoute} from "../components/PrivateRoute";
 
 export default class App extends Component {
 
     render() {
         return (
-            <div>
-                <p>Hello World!</p>
-            </div>
+            <Switch>
+                <Route exact path="/" component={LoginContainer} />
+                <PrivateRoute exact path="/dashboard" component={DashboardContainer} />
+            </Switch>
         );
     }
 }
