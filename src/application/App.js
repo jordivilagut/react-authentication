@@ -9,8 +9,8 @@ export default class App extends Component {
     render() {
         return (
             <Switch>
-                <Route exact path="/" component={LoginContainer} />
-                <PrivateRoute exact path="/dashboard" component={DashboardContainer} />
+                <PrivateRoute exact path="/" component={DashboardContainer} />
+                <Route exact path="/login" component={LoginContainer} />
             </Switch>
         );
     }
