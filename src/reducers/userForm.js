@@ -1,4 +1,4 @@
-import {CLEAR_FORM, UPDATE_FORM} from "../actions/constants/userConstants";
+import {generalForm} from "./generalForm";
 
 const initialState = {
     username: '',
@@ -6,12 +6,5 @@ const initialState = {
 };
 
 export const userForm = (state = initialState, action) => {
-    switch (action.type) {
-        case UPDATE_FORM:
-            return {...state, [action.key]: action.value};
-        case CLEAR_FORM:
-            return {...initialState};
-        default:
-            return state;
-    }
+    return generalForm(initialState, state, action);
 };
