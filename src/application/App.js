@@ -3,6 +3,7 @@ import {Switch, Route} from 'react-router-dom'
 import {PrivateRoute} from "../components/PrivateRoute";
 import {LoginContainer} from "../containers/LoginContainer";
 import {DashboardContainer} from "../containers/DashboardContainer";
+import {SignupContainer} from "../containers/SignupContainer";
 
 export default class App extends Component {
 
@@ -11,6 +12,7 @@ export default class App extends Component {
             <Switch>
                 <PrivateRoute exact path="/" component={DashboardContainer} />
                 <Route exact path="/login" component={LoginContainer} />
+                <Route exact path="/signup" component={SignupContainer} />
             </Switch>
         );
     }
