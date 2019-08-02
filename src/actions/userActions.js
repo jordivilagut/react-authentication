@@ -6,14 +6,7 @@ import {
     SIGNUP_FAILURE,
     SIGNUP_REQUEST,
     SIGNUP_SUCCESS,
-    UPDATE_FORM
 } from "./constants/userConstants";
-
-export const updateUser = input => ({
-    type: UPDATE_FORM,
-    key: input.name,
-    value: input.value
-});
 
 export function login(user) {
 

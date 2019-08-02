@@ -1,5 +1,6 @@
 import {connect} from "react-redux";
-import {signup, updateUser} from "../actions/userActions";
+import {updateForm} from "../actions/formActions";
+import {signup} from "../actions/userActions";
 import {Signup} from "../pages/Signup";
 
 const mapStateToProps = state => {
@@ -10,7 +11,7 @@ const mapDispatchToProps = dispatch => ({
     handleSubmit: user => {
         dispatch(signup(user))},
     handleInputChange: e =>
-        dispatch(updateUser(e.target)),
+        dispatch(updateForm(e.target)),
 });
 
 export const SignupContainer = connect(mapStateToProps, mapDispatchToProps)(Signup);

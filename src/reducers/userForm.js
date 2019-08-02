@@ -1,4 +1,4 @@
-import {generalForm} from "./generalForm";
+import {form} from "./form";
 
 const initialState = {
     username: '',
@@ -6,5 +6,5 @@ const initialState = {
 };
 
 export const userForm = (state = initialState, action) => {
-    return generalForm(initialState, state, action);
+    return form(state, action);
 };
