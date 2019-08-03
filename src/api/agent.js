@@ -11,9 +11,9 @@ const requests = {
     get: url =>
         superagent.get(API_ROOT_TEST + url),
     put: (url, body) =>
-        superagent.put(API_ROOT_TEST + url, body),
+        superagent.put(API_ROOT_TEST + url, body).set('Content-Type', 'application/json'),
     post: (url, body) =>
-        superagent.post(API_ROOT_TEST + url, body)
+        superagent.post(API_ROOT_TEST + url, body).set('Content-Type', 'application/json')
 };
 
 const User = {

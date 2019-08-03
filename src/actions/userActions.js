@@ -7,6 +7,8 @@ import {
     SIGNUP_REQUEST,
     SIGNUP_SUCCESS,
 } from "./constants/userConstants";
+import {usersService} from "../services/usersService";
+import { history } from '../helpers/history';
 
 export function login(user) {
 
@@ -14,8 +16,12 @@ export function login(user) {
 
         dispatch(request(user));
 
-        return agent.User.login(user).then(
-            user => dispatch(success(user)),
+        return usersService.login(user.username, user.password).then(
+            user => {
+                console.log("dispatching user succes", user);
+                dispatch(success(user));
+                history.push('/');
+            },
             error => dispatch(failure(error))
         );
     };

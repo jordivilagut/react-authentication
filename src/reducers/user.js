@@ -7,26 +7,27 @@ import {
     SIGNUP_SUCCESS
 } from "../actions/constants/userConstants";
 
-const initialState = {
-    isLogged: false,
-    user: {}
-};
+let loggedUser = localStorage.getItem('user');
+const initialState = loggedUser ? { isLogged: true, user: loggedUser } : {};
 
 export const user = (state = initialState, action) => {
+
+    console.log("user state", action.type, state);
+
     switch (action.type) {
         case LOGIN_REQUEST:
-            return {...state};
+            return {...state, isLogged: false};
         case LOGIN_SUCCESS:
-            return {...state};
+            return {isLogged: true, user: action.user};
         case LOGIN_FAILURE:
-            return {...initialState};
+            return {};
         case SIGNUP_REQUEST:
-            return {...state};
+            return {...state, isLogged: false};
         case SIGNUP_SUCCESS:
-            return {...state};
+            return {isLogged: true, user: action.user};
         case SIGNUP_FAILURE:
-            return {...initialState};
+            return {};
         default:
-            return state;
+            return {...state};
     }
 };

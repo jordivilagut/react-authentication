@@ -5,6 +5,6 @@ export const form = (state, action) => {
         case UPDATE_FORM:
             return {...state, [action.key]: action.value};
         default:
-            return state;
+            return {...state};
     }
 };

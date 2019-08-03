@@ -6,10 +6,11 @@ import App from './application/App';
 import * as serviceWorker from './serviceWorker';
 import {store} from "./store/store";
 import {BrowserRouter} from "react-router-dom";
+import {history} from "./helpers/history";
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter history={history}>
             <App/>
         </BrowserRouter>
     </Provider>
