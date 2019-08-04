@@ -2,6 +2,7 @@ import {
     LOGIN_FAILURE,
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
+    LOGOUT,
     SIGNUP_FAILURE,
     SIGNUP_REQUEST,
     SIGNUP_SUCCESS
@@ -26,6 +27,8 @@ export const user = (state = initialState, action) => {
         case SIGNUP_SUCCESS:
             return {isLogged: true, user: action.user};
         case SIGNUP_FAILURE:
+            return {};
+        case LOGOUT:
             return {};
         default:
             return {...state};

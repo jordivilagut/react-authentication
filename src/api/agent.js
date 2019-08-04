@@ -20,9 +20,7 @@ const User = {
     login: (user) =>
         requests.post('/auth/login', user),
     signup: (user) =>
-        requests.post('/auth/signup', user),
-    logout: () =>
-        requests.post('/auth/logout', {}).set("Authorization", "Bearer " + localStorage.getItem("auth-token"))
+        requests.post('/auth/signup', user)
 };
 
 export default {User};
