@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {login, logout} from "../actions/userActions";
+import {login, logout, signup} from "../actions/userActions";
 import {updateForm} from "../actions/formActions";
 import {App} from "../application/App";
 
@@ -11,8 +11,10 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    handleSubmit: userForm => {
+    handleLogin: userForm => {
         dispatch(login(userForm))},
+    handleSignup: userForm => {
+        dispatch(signup(userForm))},
     handleInputChange: e =>
         dispatch(updateForm(e.target)),
     handleLogout: () => {

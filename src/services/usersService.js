@@ -2,14 +2,28 @@ import agent from "../api/agent";
 
 export const usersService = {
     login,
+    signup,
     logout
 };
 
+const LOGIN = "LOGIN";
+const SIGNUP = "SIGNUP";
+
 function login(username, password) {
+    return userAccess(username, password, LOGIN)
+}
 
+function signup(username, password) {
+    return userAccess(username, password, SIGNUP)
+}
+
+function userAccess(username, password, accessType) {
     const user = JSON.stringify({ username, password });
+    const request = accessType === LOGIN ?
+        agent.User.login(user) :
+        agent.User.signup(user);
 
-    return agent.User.login(user).then(
+    return request.then(
         response => {
             localStorage.setItem('user', JSON.stringify(response.body));
             return response.body;
