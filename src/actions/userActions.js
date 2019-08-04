@@ -10,18 +10,17 @@ import {
 import {usersService} from "../services/usersService";
 import {history} from '../helpers/history';
 
-export function login(user) {
+export function login(userForm) {
 
     return function (dispatch) {
 
-        dispatch(request(user));
+        dispatch(request(userForm));
 
-        return usersService.login(user.username, user.password).then(
+        return usersService.login(userForm.username, userForm.password).then(
             user => {
-                console.log("dispatching user succes", user);
                 dispatch(success(user));
                 history.push('/');
-                window.location.reload(); //TODO - React should care about reloading
+                //window.location.reload(); //TODO - React should care about reloading
             },
             error => dispatch(failure(error))
         );

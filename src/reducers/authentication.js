@@ -13,8 +13,6 @@ const initialState = loggedUser ? { isLogged: true, user: loggedUser } : {};
 
 export const authentication = (state = initialState, action) => {
 
-    console.log("user state", action.type, state);
-
     switch (action.type) {
         case LOGIN_REQUEST:
             return {...state, isLogged: false};

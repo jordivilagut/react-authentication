@@ -11,8 +11,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    handleSubmit: user => {
-        dispatch(login(user))},
+    handleSubmit: userForm => {
+        dispatch(login(userForm))},
     handleInputChange: e =>
         dispatch(updateForm(e.target)),
     handleLogout: () => {
