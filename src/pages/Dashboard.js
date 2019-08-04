@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Dashboard = props => (
     <div>
-        <p>Dashboard</p>
+        <p>Welcome!</p>
         <p>User: {JSON.parse(props.authentication.user).username}</p>
     </div>
 );
