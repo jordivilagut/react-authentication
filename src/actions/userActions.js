@@ -20,7 +20,7 @@ export function login(userForm) {
             user => {
                 dispatch(success(user));
                 history.push('/');
-                //window.location.reload(); //TODO - React should care about reloading
+                window.location.reload(); //TODO - React should care about reloading
             },
             error => dispatch(failure(error))
         );
