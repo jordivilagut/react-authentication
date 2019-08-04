@@ -1,21 +1,16 @@
-import React, {Component} from 'react';
-import {Switch, Route} from 'react-router-dom'
+import React from 'react';
+import {Route, Switch} from 'react-router-dom'
 import {PrivateRoute} from "../components/PrivateRoute";
-import {LoginContainer} from "../containers/LoginContainer";
-import {DashboardContainer} from "../containers/DashboardContainer";
-import {SignupContainer} from "../containers/SignupContainer";
+import {Dashboard} from "../pages/Dashboard";
+import {Login} from "../pages/Login";
+import {Signup} from "../pages/Signup";
 
-export default class App extends Component {
-
-    render() {
-        return (
-            <Switch>
-                <PrivateRoute exact path="/" component={DashboardContainer} />
-                <Route exact path="/login" component={LoginContainer} />
-                <Route exact path="/signup" component={SignupContainer} />
-            </Switch>
-        );
-    }
-}
+export const App = props => (
+    <Switch>
+        <PrivateRoute exact path="/" component={Dashboard} props={props} />
+        <Route exact path="/login" render={() => (<Login {...props}/>)} />
+        <Route exact path="/signup" render={() => (<Signup {...props}/>)} />
+    </Switch>
+);
 
 

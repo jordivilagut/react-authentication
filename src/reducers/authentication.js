@@ -11,7 +11,7 @@ import {
 let loggedUser = localStorage.getItem('user');
 const initialState = loggedUser ? { isLogged: true, user: loggedUser } : {};
 
-export const user = (state = initialState, action) => {
+export const authentication = (state = initialState, action) => {
 
     console.log("user state", action.type, state);
 

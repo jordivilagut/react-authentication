@@ -7,6 +7,6 @@ export const Dashboard = props => (
         <a href="login">
             <FormButton text='Log Out' click={() => props.handleLogout()}/>
         </a>
-        <p>User: {props.user.username}</p>
+        <p>User: {props.authentication.user}</p>
     </div>
 );
